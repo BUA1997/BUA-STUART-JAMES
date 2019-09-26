@@ -1,0 +1,275 @@
+#include<stdio.h>
+
+int main()
+
+{
+	int age;
+	char gender;
+	
+	printf("How old are you?\n");
+	scanf("%d", &age);
+	
+	if(age >= 18)
+    { 
+	
+	 printf("You can enter this website\n");
+}
+	if(age < 18)
+	{printf("You are not allowed to veiw this website\n");
+	}
+	
+	
+	return 0;
+	
+}
+..................................................................................................................................
+
+CREATING ROWS AND COLUMN
+#include<stdio.h>
+
+int main()
+
+{
+	
+   int rows=10, columns=20;
+   int r, c;
+   for ( r=rows ; r>0 ; r--)
+   {
+       for (c = columns; c>0; c--)
+       
+          printf ("X");
+       printf ("\n");
+    }
+    
+    return 0;
+}
+......................................................................................................................................
+#include <stdio.h>
+/* Declare an array to hold expenses, and a counter variable */
+float expenses[13];
+int count;
+main()
+{
+/* Input data from keyboard into array */
+for (count = 1; count < 13; count++)
+{
+printf("Enter expenses for month %d: ", count);
+scanf("%f", &expenses[count]);
+}
+/* Print array contents */
+for (count = 1; count < 13; count++)
+{
+printf("Month %d = $%.2f\n", count, expenses[count]);
+}
+return 0;
+}
+
+........................................................................................................................................
+#include <string.h>
+#include <stdio.h>
+int main() {
+    char str1[27] = "abc";
+    char str2[100];
+    printf("%d\n",strlen(str1));
+    strcpy(str2,str1);
+    puts(str2);
+    puts("\n");
+    strcat(str2,str1);
+	 puts(str2);
+}
+
+........................................................................................................................................
+#include<stdio.h>
+int twice(int x)
+{
+	x=x+x;
+	return x;
+}
+int main()
+{
+	int x=10,y;
+	y=twice(x);
+	printf("%d,%d\n",x,y);
+}
+
+........................................................................................................................................
+#include<stdio.h>
+
+int addition(int x,int y);
+
+int main
+{
+	int one;
+	int two;
+	scanf("%d %d",one,two);
+	
+	printf("%d",addition(one,two));
+	return 0;
+}
+
+int addition(int x, int y)
+{
+	
+	return x + y;
+}
+........................................................................................................................................
+#include<stdio.h>
+
+int main()
+{
+	for(int a=1;a<10;a++)
+	{
+		for(int b=2;b<a;b++)
+		{
+			if(a%b==0)
+			break;
+			
+			else if(a==b+1)
+			
+			printf("%d\n", a);
+		}
+	}
+	
+	return 0;
+}
+........................................................................................................................................
+#include<stdio.h>
+#include<strings.h>
+#include<ctype.h>
+
+int main()
+{
+	char name[] = "BUA STUART JAMES";
+	
+	puts(name);
+	printf("the length of the name is %d\n",strlen(name));
+	
+	name[1] = tolower(name[1]);
+	puts(name);
+	
+	if(isupper(name[0]))
+	printf("the letter is capital\n",name[0]);
+	else
+	printf("the letter is small\n",name[0]);
+	
+	return 0;
+}
+.........................................................................................................................................
+#include<stdio.h>
+#include<strings.h>
+#include<ctype.h>
+
+int main()
+{
+	char name[20];
+	printf("enter your name\n");
+	gets(name);
+	
+	puts(name);
+	printf("%d\n",strlen(name));
+	
+	
+	
+	
+	return 0;
+}
+........................................................................................................................................
+#include<stdio.h>
+
+struct author{
+	char names;
+	 b
+};
+struct summary
+{char name[12];
+ int pages[];
+ int chapters;
+};
+struct summary book;
+
+int main()
+{
+	printf("enter the name of the book\n");
+	scanf("%s",book.name);
+	
+	printf("%s\n",book.name);
+	
+	printf("enter the pages of the book\n");
+	scanf("%d",&book.pages);
+	printf("%d",&book.pages);
+	return 0;
+}
+
+........................................................................................................................................
+
+#include <stdio.h>
+
+ main()
+{
+	int   nNumber;
+
+	// starting point
+start: ;
+	// prompt user for integer input between 0-10
+	puts("Enter a number between 0 and 10: ");
+	// read the input and store at nNumber variable
+	scanf("%d", &nNumber);
+
+	// test the range
+	if ((nNumber < 0) || (nNumber > 10))
+		// if outside the range, jump to the starting point
+		goto  start;
+	// else, if the input is 0
+	else if (nNumber == 0)
+		// jump to location_0
+		goto location_0;
+	// else, if the input is 1
+	else if (nNumber == 1)
+		// jump to location_1
+		goto location_1;
+	// else, jump to location_2
+	else
+		goto location_2;
+
+	//location_0 task
+location_0:  ;			 {
+puts("location_0: You entered 0.");
+			 }
+			 // exit
+			 goto   end;
+			 // location_1 task
+location_1: ;
+			{
+				puts("location_1: You entered 1.");
+			}
+			// exit
+			goto  end;
+			// location_2 task
+location_2: ;
+			{
+				puts("location_2: You entered something between 2 and 10.");
+			}
+			// program exit
+end: ;
+	 {
+		 puts("End of program\n");
+	 }
+}
+
+........................................................................................................................................
+#include <string.h>
+#include <stdio.h>
+int main() {
+    char str1[27] = "abc";
+    char str2[100]="xyz";
+    printf("%d\n",strlen(str1));
+    strcpy(str2,str1);
+    puts(str2);
+    puts("\n");
+    strcat(str2,str1);
+	 puts(str2);
+
+	 return 0;
+}
+.......................................................................................................................................
+
