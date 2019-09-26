@@ -1,0 +1,240 @@
+#include <stdio.h>
+//#include <conio.h>
+#include <stdlib.h>
+#include <strings.h>
+/* DECLARATION OF FUNCTIONS TO BE USED */
+
+void menu(void);
+void pat(void);
+void pass(void);
+void login(void);
+void dis(void);
+void A (void);
+void B (void);
+
+/* DECLARATION OF STRUCTURES TO BE USED */
+
+struct patient
+{
+int gender;
+int date[10];
+}pati;
+
+int main()
+{
+menu();
+return 0;
+}
+
+void menu()
+{
+//char choice;
+int choice;
+printf("\t\t*************************************************");
+printf("\n\t\t *** WELCOME TO WIKI HEALTH APPROACH ***");
+printf("\n\t\t*************************************************");
+printf("\n\t\tWE ARE READY TO PROVIDE HOSPITABLE SERVICES");
+printf("\n\n\n");
+printf("\t\t1.PATIENT");
+printf("\n\t\t2.STAFF");
+printf("\n\t\t0.EXIT");
+printf("\n\n\tEnter your choice: ");
+//choice=getche();
+switch(choice)
+{
+case '1':
+printf("\nYou entered patient, Fill in the required entries \n\n");
+pat();
+pass();
+dis();
+break;
+case '2':
+printf("\t\nyou selected staff\n\n");
+login();
+break;
+
+case '0':
+printf("\n\nYou have left the website");
+break;
+
+}
+}
+
+void pat()
+{
+    char fname[20];
+    char lname[20];
+    int age;
+
+    FILE*record;
+    record=fopen("group.txt","a+");
+
+    fprintf(stdout,"Enter your first Name\n");
+    fscanf(stdin,"%s",fname);
+    record=fopen("group.txt","a+");
+    fprintf(record,"%s\t",fname);
+
+    fprintf(stdout,"Enter your Last Name\n");
+    fscanf(stdin,"%s",lname);
+    record=fopen("group.txt","a+");
+    fprintf(record,"%s\t",lname);
+
+    fprintf(stdout,"Enter your AGE\n");
+    fscanf(stdin,"%d",&age);
+    record=fopen("group.txt","a+");
+    fprintf(record,"%d\t",age);
+    fclose(record);
+}
+
+void pass()
+{
+     const int min=8;
+    char password[20];
+
+     for(;;){
+	printf("Enter your password So that your account can be created\n");
+	scanf("%s",password);
+
+	printf("%d\n",strlen(password));
+
+	 if(strlen(password)>=min)
+	{
+	    printf("Password strength: strong\n");
+	    printf("YOU CAN NOW PROCEED\n");
+		break;
+
+	}
+	else
+	{
+	    printf("!!!!!!!!!WEAK PASSWORD!!!!!!\n");
+		printf("Try again with greater than 8 characters\n");
+	}
+    }
+    printf("enter gender\n");
+	printf("choose 1 if male or 2 if female\n");
+	scanf("%d", &pati.gender);
+	printf("enter the date in the format dd/mm/yy!!\n");
+	scanf("%d", &pati.date);
+
+}
+
+void login()
+{   const int passcodeA=500;
+    const int passcodeB=256;
+
+    char Name[10];
+    int tab;
+
+    for(;;){
+	printf("Enter your name\n");
+	scanf("%s", Name);
+
+    printf("Enter your password\n");
+	scanf(" %d",&tab);
+
+	 if(tab==passcodeA)
+	{
+	    printf("Login successful Doctor 1\n");
+	    printf("You have successfully registered for todays attendence\n");
+	    printf("COMMENCE WITH YOUR DAILY ACTIVITIES\n");
+		break;
+	}
+	else if(tab==passcodeB)
+	{
+	    printf("Login successful Doctor 2\n");
+
+		break;
+	}
+	else
+	{
+	    printf("!!!!!!!WRONG PASSWORD!!!!!!\n");
+	}
+    }
+    	printf("enter the date in the format dd/mm/yy!!\n");
+		scanf("%d", &pati.date);
+		printf("You have successfully registered for todays attendence\n");
+	    printf("COMMENCE WITH YOUR DAILY ACTIVITIES\n");
+    }
+
+    void dis()
+    {
+    	char agree;
+    	puts("We offer services in MALARIA and INFLUENZA\n\n ");
+    	printf("\t\tA.MALARIA");
+	printf("\n\t\tB.INFLUENZA");
+	printf("\n\t\t0.EXIT");
+	printf("\n\n\tEnter your choice: ");
+	//agree=getche();
+	switch(agree)
+{
+	case 'A':
+printf("\nYOU ARE SUFFERING FROM MALARIA!!! \n\n");
+A();
+printf("\nYOU CAN PICK THE DRUGS FROM THE DISPENSARY IN ROOM 105");
+break;
+case 'B':
+printf("\t\nYOU ARE SUFFERING FROM INFLUENZA\n\n");
+B();
+printf("\nYOU CAN PICK THE DRUGS FROM THE DISPENSARY IN ROOM 105\n\n");
+break;
+
+case 0:
+printf("\n\nYOU ARE FREE FROM THE ABOVE DISEASES\n");
+break;
+
+}
+}
+void A (void)
+{
+    long shs=5000;
+    long * pshs;
+           pshs=&shs;
+    long sh=7000;
+    long * psh;
+           psh=&sh;
+    printf("\t\tMEDICINE\t\tADVICE\t\t\t\tPRESCRIPTION\n\n");
+    printf("\n\t\t1.COUTERM\t\t>Take medication with milk\t4 by 2\n\n");
+    printf("\nThe price of couterm is %ld\n",*pshs);
+    printf("\n\t\t2.ARCO\t\t>Take medication after eating\t\t4 by 1\n\n");
+    printf("\nThe price of ARCO is %ld\n",*psh);
+}
+
+void B (void)
+{
+    long price1=4500;
+    long * pprice1;
+           pprice1=&price1;
+           long price2=3200;
+    long * pprice2;
+           pprice2=&price2;
+
+    printf("\t\tMEDICINE\t\tADVICE\t\t\t\tPRESCRIPTION\n\n");
+    printf("\n\t\t1.FLUE CAP\t\t>Take alot of water\t\t10Ml twice a day\n\n ");
+        printf("\nThe price of FLUE CAP is %ld\n",*pprice1);
+    printf("\n\t\t2.Panado\t\t>Take with boiled water\t\t2 by 3\n\n");
+        printf("\nThe price of PANADO is %ld\n",*pprice2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
